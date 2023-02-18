@@ -959,6 +959,7 @@ main {
   height: 200px;
   border-radius: 16px;
   overflow: hidden;
+  object-fit: fill;
   margin-bottom: 15px;
 }
 
