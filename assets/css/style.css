@@ -1039,7 +1039,7 @@ main {
 .blog-posts-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 30px;
 }
 
 .blog-post-item > a {
