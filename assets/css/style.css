@@ -1045,9 +1045,9 @@ main {
 .blog-post-item > a {
   position: relative;
   background: var(--border-gradient-onyx);
-  height: 10%;
+  height: 100%;
   box-shadow: var(--shadow-4);
-  /* border-radius: 16px; */
+  border-radius: 16px;
   z-index: 1;
 }
 
@@ -1624,7 +1624,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   /* portfolio and blog grid */
 
-  .project-list, .blog-posts-list { grid-template-columns: 1fr 1fr; }
+  .project-list, .blog-posts-list { grid-template-columns: 1fr 1fr 1fr; }
 
 
 
