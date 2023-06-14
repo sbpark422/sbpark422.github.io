@@ -140,6 +140,16 @@ for (let i = 0; i < formInputs.length; i++) {
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
+// Set the portfolio page as the default active page on load
+window.onload = function() {
+  for (let i = 0; i < pages.length; i++) {
+    if (pages[i].dataset.page === 'portfolio') {
+      pages[i].classList.add('active');
+      navigationLinks[i].classList.add('active');
+    }
+  }
+}
+
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
@@ -156,10 +166,4 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
 
   });
-}
-
-// Check if the current URL ends with index.html
-if (window.location.href.endsWith('index.html')) {
-  // Redirect to the portfolio page
-  window.location.href = 'index.html#portfolio';
 }
