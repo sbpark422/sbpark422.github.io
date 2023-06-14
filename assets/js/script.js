@@ -171,28 +171,36 @@ for (let i = 0; i < formInputs.length; i++) {
 //   }
 // });
 
+document.addEventListener("DOMContentLoaded", function() {
+  // page navigation variables
+  const navigationLinks = document.querySelectorAll("[data-nav-link]");
+  const pages = document.querySelectorAll("[data-page]");
 
-// page navigation variables
-const navigationLinks = document.querySelectorAll('[data-nav-link]');
-const pages = document.querySelectorAll('[data-page]');
-
-// Set the portfolio page as the default active page
-for (let i = 0; i < pages.length; i++) {
-  if (pages[i].dataset.page === 'portfolio') {
-    pages[i].classList.add('active');
-    navigationLinks[i].classList.add('active');
-  } else {
-    pages[i].classList.remove('active'); // Ensure other pages are not active
-    navigationLinks[i].classList.remove('active');
+  // Set the portfolio page as the default active page
+  for (let i = 0; i < pages.length; i++) {
+    if (pages[i].dataset.page === 'portfolio') {
+      pages[i].classList.add('active');
+      navigationLinks[i].classList.add('active');
+    } else {
+      pages[i].classList.remove('active'); // Ensure other pages are not active
+      navigationLinks[i].classList.remove('active');
+    }
   }
-}
 
-// Remove navigation links for other pages
-for (let i = 0; i < navigationLinks.length; i++) {
-  if (
-    navigationLinks[i].innerText.toLowerCase() !== 'portfolio' &&
-    navigationLinks[i].innerText.toLowerCase() !== 'about me'
-  ) {
-    navigationLinks[i].remove();
+  // add event to all nav link
+  for (let i = 0; i < navigationLinks.length; i++) {
+    navigationLinks[i].addEventListener("click", function () {
+      // Remove 'active' class from all pages and navigation links
+      pages.forEach((page) => page.classList.remove('active'));
+      navigationLinks.forEach((link) => link.classList.remove('active'));
+
+      // Add 'active' class to clicked navigation link and corresponding page
+      this.classList.add('active');
+      let pageToShow = [...pages].find(page => page.dataset.page === this.innerHTML.toLowerCase());
+      if (pageToShow) {
+        pageToShow.classList.add('active');
+      }
+      window.scrollTo(0, 0);
+    });
   }
-}
+});
