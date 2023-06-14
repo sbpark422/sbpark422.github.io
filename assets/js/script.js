@@ -139,25 +139,25 @@ for (let i = 0; i < formInputs.length; i++) {
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
-
-// Set the portfolio page as the default active page on load
-window.onload = function() {
-  for (let i = 0; i < pages.length; i++) {
-    if (pages[i].dataset.page === 'portfolio') {
-      pages[i].classList.add('active');
-      navigationLinks[i].classList.add('active');
-    }
-  }
-}
-
-// Set the portfolio page as the default active page
-for (let i = 0; i < pages.length; i++) {
-  if (pages[i].dataset.page === 'portfolio') {
-    pages[i].classList.add('active');
-    navigationLinks[i].classList.add('active');
-    break;
-  }
-}
+// 
+// // Set the portfolio page as the default active page on load
+// window.onload = function() {
+//   for (let i = 0; i < pages.length; i++) {
+//     if (pages[i].dataset.page === 'portfolio') {
+//       pages[i].classList.add('active');
+//       navigationLinks[i].classList.add('active');
+//     }
+//   }
+// }
+//
+// // Set the portfolio page as the default active page
+// for (let i = 0; i < pages.length; i++) {
+//   if (pages[i].dataset.page === 'portfolio') {
+//     pages[i].classList.add('active');
+//     navigationLinks[i].classList.add('active');
+//     break;
+//   }
+// }
 
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
