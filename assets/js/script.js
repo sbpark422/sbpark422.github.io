@@ -150,6 +150,15 @@ window.onload = function() {
   }
 }
 
+// Set the portfolio page as the default active page
+for (let i = 0; i < pages.length; i++) {
+  if (pages[i].dataset.page === 'portfolio') {
+    pages[i].classList.add('active');
+    navigationLinks[i].classList.add('active');
+    break;
+  }
+}
+
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
