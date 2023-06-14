@@ -1031,7 +1031,7 @@ main {
 
 .project-description {
   color: var(--light-gray-70);
-  font-size: var(14px);
+  font-size: var(12px);
   font-weight: var(--fw-300);
   text-align: center;
 }
