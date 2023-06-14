@@ -157,3 +157,9 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// Check if the current URL ends with index.html
+if (window.location.href.endsWith('index.html')) {
+  // Redirect to the portfolio page
+  window.location.href = 'index.html#portfolio';
+}
