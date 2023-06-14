@@ -141,11 +141,14 @@ document.addEventListener("DOMContentLoaded", function() {
   const navigationLinks = document.querySelectorAll("[data-nav-link]");
   const pages = document.querySelectorAll("[data-page]");
 
-  // Set the portfolio page as the default active page on load
+  // Set the portfolio page as the default active page
   for (let i = 0; i < pages.length; i++) {
     if (pages[i].dataset.page === 'portfolio') {
       pages[i].classList.add('active');
       navigationLinks[i].classList.add('active');
+    } else {
+      pages[i].classList.remove('active'); // Ensure other pages are not active
+      navigationLinks[i].classList.remove('active');
     }
   }
 
