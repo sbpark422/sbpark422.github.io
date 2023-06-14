@@ -136,23 +136,46 @@ for (let i = 0; i < formInputs.length; i++) {
 
 
 
+// document.addEventListener("DOMContentLoaded", function() {
+//   // page navigation variables
+//   const navigationLinks = document.querySelectorAll("[data-nav-link]");
+//   const pages = document.querySelectorAll("[data-page]");
+//
+//   // Set the portfolio page as the default active page on load
+//   for (let i = 0; i < pages.length; i++) {
+//     if (pages[i].dataset.page === 'portfolio') {
+//       pages[i].classList.add('active');
+//       navigationLinks[i].classList.add('active');
+//     }
+//   }
+//
+//   // add event to all nav link
+//   for (let i = 0; i < navigationLinks.length; i++) {
+//     navigationLinks[i].addEventListener("click", function () {
+//
+//       for (let i = 0; i < pages.length; i++) {
+//         if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
+//           pages[i].classList.add("active");
+//           navigationLinks[i].classList.add("active");
+//           window.scrollTo(0, 0);
+//         } else {
+//           pages[i].classList.remove("active");
+//           navigationLinks[i].classList.remove("active");
+//         }
+//       }
+//
+//     });
+//   }
+// });
+
 document.addEventListener("DOMContentLoaded", function() {
   // page navigation variables
   const navigationLinks = document.querySelectorAll("[data-nav-link]");
   const pages = document.querySelectorAll("[data-page]");
 
-  // Set the portfolio page as the default active page on load
-  for (let i = 0; i < pages.length; i++) {
-    if (pages[i].dataset.page === 'portfolio') {
-      pages[i].classList.add('active');
-      navigationLinks[i].classList.add('active');
-    }
-  }
-
   // add event to all nav link
   for (let i = 0; i < navigationLinks.length; i++) {
     navigationLinks[i].addEventListener("click", function () {
-
       for (let i = 0; i < pages.length; i++) {
         if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
           pages[i].classList.add("active");
@@ -163,7 +186,13 @@ document.addEventListener("DOMContentLoaded", function() {
           navigationLinks[i].classList.remove("active");
         }
       }
-
     });
   }
+
+  // Set the portfolio page as the active page on load
+  const portfolioPage = document.querySelector("[data-page='portfolio']");
+  const portfolioNavLink = [...navigationLinks].find(navLink => navLink.textContent.toLowerCase() === 'portfolio');
+
+  portfolioPage.classList.add('active');
+  portfolioNavLink.classList.add('active');
 });
